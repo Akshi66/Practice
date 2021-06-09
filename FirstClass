@@ -1,0 +1,9 @@
+public class FirstClass {
+   
+    @AuraEnabled
+    public static list<opportunity> getopplist(){
+        
+        list<opportunity> opps = [select Id,AccountId,Name,CloseDate,StageName from opportunity where StageName='Closed Won' and CreatedDate = THIS_WEEK Limit 10];
+        return opps;
+    }
+}
